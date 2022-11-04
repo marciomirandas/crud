@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap5 %}
+{% block content %}
+
+
+<h1 class="text-center">Excluir Produto</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <p>Tem certeza que deseja excluir o produto</p>
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Confirmar</button>
+        <a href="{% url 'index' %}"><button type="button" class="btn btn-warning">Cancelar</button></a>
+    {% endbuttons %}
+</form>
+
+{% endblock %}

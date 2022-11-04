@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load humanize %}
+{% load bootstrap5 %}
+{% block content %}
+
+
+<h1 class="text-center">Adicionar Produto</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        <a href="{% url 'index' %}"><button type="button" class="btn btn-warning">Cancelar</button></a>
+    {% endbuttons %}
+</form>
+
+{% endblock %}
